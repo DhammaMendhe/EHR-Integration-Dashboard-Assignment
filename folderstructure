@@ -1,0 +1,222 @@
+ehr-nextjs-project/
+├── src/                          # Main source directory
+│   ├── app/                      # Next.js App Router (v13+)
+│   │   ├── (auth)/              # Route group for authentication
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   ├── register/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── (dashboard)/         # Route group for main app
+│   │   │   ├── patients/
+│   │   │   │   ├── page.tsx     # Patient list
+│   │   │   │   ├── [id]/
+│   │   │   │   │   ├── page.tsx # Patient details
+│   │   │   │   │   ├── edit/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   └── records/
+│   │   │   │   │       └── page.tsx
+│   │   │   │   └── new/
+│   │   │   │       └── page.tsx
+│   │   │   ├── appointments/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── new/
+│   │   │   │       └── page.tsx
+│   │   │   ├── doctors/
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── [id]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── medical-records/
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── [id]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── admin/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── users/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── reports/
+│   │   │   │       └── page.tsx
+│   │   │   └── layout.tsx       # Dashboard layout
+│   │   ├── api/                 # Backend API routes
+│   │   │   ├── auth/
+│   │   │   │   ├── login/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── register/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── logout/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── verify/
+│   │   │   │       └── route.ts
+│   │   │   ├── patients/
+│   │   │   │   ├── route.ts     # GET /api/patients, POST /api/patients
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── route.ts # GET, PUT, DELETE /api/patients/[id]
+│   │   │   │   ├── search/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── upload/
+│   │   │   │       └── route.ts
+│   │   │   ├── appointments/
+│   │   │   │   ├── route.ts
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── schedule/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── available-slots/
+│   │   │   │       └── route.ts
+│   │   │   ├── doctors/
+│   │   │   │   ├── route.ts
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── availability/
+│   │   │   │       └── route.ts
+│   │   │   ├── medical-records/
+│   │   │   │   ├── route.ts
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── patient/
+│   │   │   │       └── [patientId]/
+│   │   │   │           └── route.ts
+│   │   │   ├── prescriptions/
+│   │   │   │   ├── route.ts
+│   │   │   │   └── [id]/
+│   │   │   │       └── route.ts
+│   │   │   ├── billing/
+│   │   │   │   ├── route.ts
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── invoice/
+│   │   │   │       └── route.ts
+│   │   │   ├── reports/
+│   │   │   │   ├── route.ts
+│   │   │   │   ├── analytics/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── export/
+│   │   │   │       └── route.ts
+│   │   │   └── admin/
+│   │   │       ├── users/
+│   │   │       │   └── route.ts
+│   │   │       └── system/
+│   │   │           └── route.ts
+│   │   ├── globals.css          # Global styles
+│   │   ├── layout.tsx           # Root layout
+│   │   ├── loading.tsx          # Global loading UI
+│   │   ├── error.tsx            # Global error UI
+│   │   ├── not-found.tsx        # 404 page
+│   │   └── page.tsx             # Home page
+│   ├── components/              # Reusable UI components
+│   │   ├── ui/                  # Base UI components (Shadcn-UI)
+│   │   │   ├── button.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── modal.tsx
+│   │   │   ├── table.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── badge.tsx
+│   │   │   └── index.ts
+│   │   ├── forms/               # Form components
+│   │   │   ├── patient-form.tsx
+│   │   │   ├── appointment-form.tsx
+│   │   │   ├── medical-record-form.tsx
+│   │   │   ├── prescription-form.tsx
+│   │   │   └── login-form.tsx
+│   │   ├── layout/              # Layout components
+│   │   │   ├── header.tsx
+│   │   │   ├── sidebar.tsx
+│   │   │   ├── footer.tsx
+│   │   │   ├── breadcrumbs.tsx
+│   │   │   └── navigation.tsx
+│   │   ├── dashboard/           # Dashboard-specific components
+│   │   │   ├── stats-card.tsx
+│   │   │   ├── recent-appointments.tsx
+│   │   │   ├── patient-overview.tsx
+│   │   │   └── analytics-chart.tsx
+│   │   ├── patients/            # Patient-related components
+│   │   │   ├── patient-card.tsx
+│   │   │   ├── patient-list.tsx
+│   │   │   ├── patient-search.tsx
+│   │   │   └── patient-profile.tsx
+│   │   ├── appointments/        # Appointment components
+│   │   │   ├── appointment-card.tsx
+│   │   │   ├── calendar.tsx
+│   │   │   ├── time-picker.tsx
+│   │   │   └── appointment-status.tsx
+│   │   ├── medical-records/     # Medical record components
+│   │   │   ├── record-viewer.tsx
+│   │   │   ├── record-editor.tsx
+│   │   │   ├── file-uploader.tsx
+│   │   │   └── medical-history.tsx
+│   │   └── shared/              # Shared components
+│   │       ├── loading-spinner.tsx
+│   │       ├── error-boundary.tsx
+│   │       ├── confirmation-modal.tsx
+│   │       ├── data-table.tsx
+│   │       └── status-badge.tsx
+│   ├── lib/                     # Core libraries and configurations
+│   │   ├── auth.ts              # Authentication configuration
+│   │   ├── db.ts                # Database connection
+│   │   ├── validation.ts        # Zod validation schemas
+│   │   ├── utils.ts             # Utility functions
+│   │   ├── constants.ts         # Application constants
+│   │   ├── middleware.ts        # Custom middleware
+│   │   ├── encryption.ts        # Data encryption utilities
+│   │   └── email.ts             # Email service configuration
+│   ├── hooks/                   # Custom React hooks
+│   │   ├── use-auth.ts
+│   │   ├── use-patients.ts
+│   │   ├── use-appointments.ts
+│   │   ├── use-medical-records.ts
+│   │   ├── use-local-storage.ts
+│   │   └── use-debounce.ts
+│   ├── stores/                  # State management (Zustand/Redux)
+│   │   ├── auth-store.ts
+│   │   ├── patient-store.ts
+│   │   ├── appointment-store.ts
+│   │   └── ui-store.ts
+│   ├── types/                   # TypeScript type definitions
+│   │   ├── auth.ts
+│   │   ├── patient.ts
+│   │   ├── appointment.ts
+│   │   ├── medical-record.ts
+│   │   ├── doctor.ts
+│   │   ├── prescription.ts
+│   │   ├── billing.ts
+│   │   └── index.ts
+│   ├── actions/                 # Server actions
+│   │   ├── auth-actions.ts
+│   │   ├── patient-actions.ts
+│   │   ├── appointment-actions.ts
+│   │   └── medical-record-actions.ts
+│   ├── services/                # External service integrations
+│   │   ├── database.ts          # Database service
+│   │   ├── storage.ts           # File storage service
+│   │   ├── notification.ts      # SMS/Email notifications
+│   │   ├── payment.ts           # Payment processing
+│   │   └── analytics.ts         # Analytics service
+│   └── styles/                  # Styling files
+│       ├── globals.css
+│       ├── components.css
+│       └── utilities.css
+├── public/                      # Static assets
+│   ├── images/
+│   │   ├── logos/
+│   │   ├── avatars/
+│   │   ├── medical-icons/
+│   │   └── backgrounds/
+│   ├── icons/
+│   │   ├── favicon.ico
+│   │   └── apple-touch-icon.png
+│   └── documents/
+│       └── sample-forms/
+├── prisma/                      # Database schema (if using Prisma)
+│   ├── schema.prisma
+│   ├── migrations/
+│   └── seed.ts
+├── .env.local                   # Environment variables
+├── .env.example                 # Environment variables template
+├── next.config.js               # Next.js configuration
+├── tailwind.config.js           # Tailwind CSS configuration
+├── tsconfig.json                # TypeScript configuration
+├── package.json                 # Dependencies and scripts
+├── middleware.ts                # Next.js middleware
+└── README.md                    # Project documentation
