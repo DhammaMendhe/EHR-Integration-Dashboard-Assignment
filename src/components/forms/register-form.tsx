@@ -61,7 +61,7 @@ export default function RegisterForm() {
       if (response.ok) {
         setSuccess('Registration successful! Redirecting to login...')
         setTimeout(() => {
-          router.push('/login')
+          router.push('/auth/login')
         }, 2000)
       } else {
         setError(result.error || 'Registration failed')

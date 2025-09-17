@@ -37,7 +37,7 @@ export default function LoginForm() {
 
       if (response.ok) {
         // Redirect to dashboard or patients page
-        router.push('/patients')
+        router.push('/dashboard/patients')
       } else {
         setError(result.error || 'Login failed')
       }
