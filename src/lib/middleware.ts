@@ -1,8 +1,8 @@
 // src/lib/auth-middleware.ts
 import jwt from 'jsonwebtoken'
 import { NextRequest } from 'next/server'
-import dbConnect from '@/lib/db'
-import User from '@/models/User'
+import dbConnect from '@/lib/dbconnect'
+import User from '@/models/user'
 
 export async function verifyToken(request: NextRequest) {
   try {

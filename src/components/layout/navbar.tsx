@@ -62,18 +62,25 @@ export default function Navbar() {
 
           {/* User Menu */}
           <div className="hidden md:block">
-            <div className="ml-4 flex items-center md:ml-6 space-x-4">
+            <div className="ml-4 flex items-center md:ml-6 space-x-3">
               <Link 
                 href="/auth/login" 
                 className="bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-md text-sm font-medium"
               >
-                Login
+                Patient Login
               </Link>
               <Link 
                 href="/auth/register" 
                 className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md text-sm font-medium"
               >
                 Register
+              </Link>
+              {/* ✅ Admin Login Button */}
+              <Link 
+                href="/auth/admin-login" 
+                className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md text-sm font-medium border border-red-500"
+              >
+                Admin
               </Link>
             </div>
           </div>
@@ -137,18 +144,27 @@ export default function Navbar() {
             >
               Reports
             </Link>
+            
+            {/* Mobile Login Section */}
             <div className="pt-4 pb-3 border-t border-blue-600">
               <Link
-                href="/login"
+                href="/auth/login"
                 className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800"
               >
-                Login
+                Patient Login
               </Link>
               <Link
-                href="/register"
+                href="/auth/register"
                 className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800"
               >
                 Register
+              </Link>
+              {/* ✅ Admin Login in Mobile Menu */}
+              <Link
+                href="/auth/admin/login"
+                className="block px-3 py-2 rounded-md text-base font-medium bg-red-600 hover:bg-red-700 mt-2"
+              >
+                🔒 Admin Login
               </Link>
             </div>
           </div>

@@ -1,9 +1,9 @@
 // src/app/api/admin/patients/[id]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
-import dbConnect from '@/lib/db'
+import dbConnect from '@/lib/dbconnect'
 import Patient from '@/models/Patient'
-import { verifyToken, checkPermission } from '@/lib/auth-middleware'
+import { verifyToken, checkPermission } from '@/lib/middleware'
 
 // GET - Get specific patient
 export async function GET(
